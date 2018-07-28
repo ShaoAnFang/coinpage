@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contact.css')}}">
+</head>
+
+<div class="container-fluid padding">
+<div class="row justify-content-center">
+    <div class="col-4 title text-center">
+        <h2>選購流程</h2>
+    </div>
+</div>
+</div>
+
+
+<div class="container-fluid padding">
+<div class="row justify-content-center">
+    <div class="col-12 title text-center">
+        <h2>全台可宅配取貨兼具彈性</h2>
+    </div>
+    <div class="col-4 list">
+        <ol>
+            <li>加入Line ID:123456789</li>
+            <li>告知購買機種與數量</li> 
+            <li>可至光華商場面交</li>
+        </ol>
+    </div>
+
+</div>
+</div>
+
+
+
+
+<div class="container-fluid padding">
+    <div class="row justify-content-center">
+        <div class="col-12 title text-center">
+            <h2>若礦機沒有適合放置空間 也有提供礦機託管服務</h2>
+            <h2>提供您的mail或Line id，將盡速與您聯繫</h2>
+        </div>
+        <div class="col-5 text-center">
+                <div class="input-group">
+                <input placeholder="輸入email 或 Line ID" class="form-control input-lg" type="text">
+                <span class="input-group-btn">
+                <button class="btn btn-primary btn-lg">送出</button>
+                </span>
+            </div>
+        </div>
+        </div>        
+    </div>
+</div>
+
+<hr>
+
+<!--- Footer -->
+<footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="img/w3newbie.png">
+            <hr class="light">
+            <p>555-5555-555</p>
+            <p>email@gmail.com</p>
+            <p>City, state, 0000</p>
+        </div>
+        <div class="col-md-4">
+            <hr class="light">
+            <h5>Our hours</h5>
+            <hr class="light">
+            <p>555-5555-555</p>
+            <p>email@gmail.com</p>
+            <p>City, state, 0000</p>
+        </div>
+    </div>
+    </div>
+    </footer>
+    
+    </body>
+    </html>
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!--- Image Slider -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+<ul class="carousel-indicators">
+	<li data-target="#slides" data-slide-to="0" class="active"></li>
+	<li data-target="#slides" data-slide-to="1"></li>
+	<li data-target="#slides" data-slide-to="2"></li>
+</ul>
+<div class="carousel-inner">
+	<div class="carousel-item active">
+		<img src="/static/img/background00.jpg">
+		<div class="carousel-caption">
+			<h1 class="display-2">數位加密貨幣礦機供應商</h1>
+			<h3>提供代管 礦機購買 數位加密貨幣市場分析等諮詢</h3>
+		</div>
+	</div>
+	<div class="carousel-item">
+		<img src="/static/img/background01.jpg">
+	</div>
+	<div class="carousel-item">
+		<img src="/static/img/allcoinbackground.jpg">
+	</div>
+</div>
+</div>
+
+<!--- Jumbotron -->
+
+
+<!--- Welcome Section -->
+<div clss="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4">將性能設定最佳化 將一切化繁為簡</h1>
+		</div>
+		<hr>
+		<div class="col-12">
+			<p class="lead">提供收益諮詢服務 電子錢包申請完成 開機並設定好錢包後即刻加入虛擬貨幣市場</p>
+		</div>
+	</div>
+</div>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+		<div class="allcoin">
+				<img src="/static/img/allcoin.png" class="img-fluid" alt="Responsive image">
+				<hr class="my-4">
+				<h3>各大虛擬貨幣皆適用</h3>
+		</div>
+<hr class="my-4">
+</div>
+
+{% endblock content %}
+

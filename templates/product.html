@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='product.css')}}">
+</head>
+
+<div class="row text-center">
+    <div class="col-12">
+        <h1>購買礦機</h1>
+        <h1>可宅配、台北光華商場面交、國內轉帳</h1>
+    </div>
+</div>
+
+
+<div class="container-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-lg-3 col-md-3">
+            <img src="/static/img/machine.jpg" class="img-fluid productPhoto" alt="Responsive image">
+            <h5>P104 顯示卡*8</h5>
+            <h6>NT$165,000</h6>
+            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for('product') }}'">查看完整規格</button>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <img src="/static/img/machineContant.jpg" class="img-fluid productPhoto" alt="Responsive image">
+            <h5>GTX 1070Ti 顯示卡*8</h5>
+            <h6>NT$185,000</h6>
+            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for('product1') }}'">查看完整規格</button>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <img src="/static/img/machineContant2.jpg" class="img-fluid productPhoto" alt="Responsive image">
+            <h5>AMD RX570 顯示卡*8</h5>
+            <h6>NT$111,000(8GB), NT$110,000(4GB)</h6>
+            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for('product2') }}'">查看完整規格</button>    
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <img src="/static/img/machineContant1.jpg" class="img-fluid productPhoto" alt="Responsive image">
+            <h5>GTX 1060 顯示卡*8</h5>
+            <h6>NT$90,000</h6>
+            <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{{ url_for('product3') }}'">查看完整規格</button> 
+        </div>
+    <hr class="my-4">
+    </div>
+
+
+
+<div class="container">
+<div class="row text-center">
+    <div class="col-12 title">
+        <h2>產品以機箱直插版礦機為主 傳統裸機一般主機板轉接達到多卡的目的</h2>
+        <h2>轉接卡使用壽命及穩定性接容易出問題 常造成以下狀況:</h2>
+    </div>
+</div>
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="col-4"></div>
+    <div class="col-4 list">
+        <ol>
+            <li>算力不穩</li>
+            <li>除錯困難</li>
+            <li>散熱難度高</li> 
+            <li>裸機易生灰塵</li>
+            <li>電容品質不佳導致火災</li>
+        </ol>
+    </div>
+    <div class="col-4"></div>
+    <h2>以上狀況致使大幅降低穩定性及使用壽命</h2>
+</div>
+    
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <img src="/static/img/machine.jpg" class="img-fluid productPhoto" alt="Responsive image">
+        </div>
+		<div class="col-4 about-right">
+                <h3>P104 八卡直插版</h3>
+                <h5>P104 為GTX1080晶片優化</h5>
+                <label class="about-line"></label>
+                <h6>CPU: Intel G3930</h6>
+                <h6>Ram: DDR3 4GB</h6>
+                <h6>HD: SSD 120G</h6>
+                <h6>顯示卡: P104＊8張</h6>
+                <h6>PSU: 1500W ENERMAX</h6>
+                <h6>算力表現: 最低ETHASH:300MH/s</h6>
+                <h6>最低EQUIHASH: 3200H/s</h6>
+                <h6>功耗: 1300W/h</h6>
+                <label class="about-line"></label>
+                <h6>售價:165,000</h6>
+                <a href="#portfolio" class="scroll"  onclick="window.location.href='{{ url_for('contect') }}'"> 購買 </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
