@@ -28,9 +28,9 @@ def product3():
     return render_template('product3.html')
 
 
-@app.route("/concept")
-def concept():
-    return render_template('concept.html')
+@app.route("/virtual_currency_guide")
+def virtual_currency_guide():
+    return render_template('virtual_currency_guide.html')
 
 
 @app.route("/contect")
