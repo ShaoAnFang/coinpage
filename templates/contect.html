@@ -40,12 +40,14 @@
             <h2>提供您的mail或Line id，將盡速與您聯繫</h2>
         </div>
         <div class="col-5 text-center">
+            <form action = "{{ url_for('sendInfo') }}" method = "POST">
                 <div class="input-group">
-                <input placeholder="輸入email 或 Line ID" class="form-control input-lg" type="text">
-                <span class="input-group-btn">
-                <button class="btn btn-primary btn-lg">送出</button>
-                </span>
-            </div>
+                    <input placeholder="輸入email 或 Line ID" class="form-control input-lg" type="text" name="mail">
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary btn-lg" name="mail">送出</button>
+                    </span>
+                </div>
+            </form>
         </div>
         </div>        
     </div>
@@ -54,29 +56,6 @@
 <hr>
 
 <!--- Footer -->
-<footer>
-    <div class="container-fluid padding">
-    <div class="row text-center">
-        <div class="col-md-4">
-            <img src="img/w3newbie.png">
-            <hr class="light">
-            <p>555-5555-555</p>
-            <p>email@gmail.com</p>
-            <p>City, state, 0000</p>
-        </div>
-        <div class="col-md-4">
-            <hr class="light">
-            <h5>Our hours</h5>
-            <hr class="light">
-            <p>555-5555-555</p>
-            <p>email@gmail.com</p>
-            <p>City, state, 0000</p>
-        </div>
-    </div>
-    </div>
-    </footer>
-    
-    </body>
-    </html>
+
 
 {% endblock content %}
