@@ -1,7 +1,13 @@
-from flask import Flask, render_template, url_for, flash, redirect
+import smtplib
+from flask import Flask, render_template, url_for, flash, redirect, request
+from firebase import firebase
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
+
+firebase = firebase.FirebaseApplication('https://python-f5763.firebaseio.com/')
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def home():
@@ -37,6 +43,30 @@ def virtual_currency_guide():
 def contect():
     return render_template('contect.html')
 
+
+@app.route("/sendInfo", methods = ['POST', 'GET'])
+def sendInfo():
+    Hab = firebase.get('/Habook',"Hab")
+    HiL = firebase.get('/Habook',"HiL")
+    HiT = firebase.get('/Habook',"HiT")
+    result = request.form['mail']
+    smtp_server = 'smtp.gmail.com'
+    msg = MIMEMultipart()
+    #信件內文
+    mailContent= 'Hi 以下是對方填入的資訊,' + '\n' + result
+    content = MIMEText(mailContent)
+    msg.attach(content)
+    #信件Title
+    msg['Subject'] = 'Coin Page' 
+    msg['From'] = HiL + '@gamil.com'
+    msg['To'] = HiL + '@gamil.com'
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo()
+    server.starttls()
+    server.login(HiL, HiT)
+    server.sendmail(Hab, Hab, msg.as_string())
+    server.quit()
+    return render_template('contect.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
