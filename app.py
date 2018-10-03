@@ -63,9 +63,9 @@ def sendInfo():
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login(str(HiL),str(HiT))
-#     server.sendmail(Hab, Hab, msg.as_string())
-#     server.quit()
+    server.login(HiL + '@gamil.com', HiT)
+    server.sendmail(Hab, Hab, msg.as_string())
+    server.quit()
     return render_template('contect.html')
 
 if __name__ == '__main__':
