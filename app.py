@@ -55,11 +55,11 @@ def sendInfo():
     mailContent= 'Hi 以下是對方填入的資訊,' + '\n' + result
     content = MIMEText(mailContent)
     msg.attach(content)
-#     #信件Title
-#     msg['Subject'] = 'Coin Page' 
-#     msg['From'] = HiL + '@gamil.com'
-#     msg['To'] = HiL + '@gamil.com'
-#     server = smtplib.SMTP('smtp.gmail.com', '587')
+    #信件Title
+    msg['Subject'] = 'Coin Page' 
+    msg['From'] = HiL + '@gamil.com'
+    msg['To'] = HiL + '@gamil.com'
+    server = smtplib.SMTP('smtp.gmail.com', '587')
 #     server.ehlo()
 #     server.starttls()
 #     server.ehlo()
