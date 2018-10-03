@@ -5,6 +5,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 firebase = firebase.FirebaseApplication('https://python-f5763.firebaseio.com/')
+Hab = firebase.get('/Habook',"Hab")
+HiL = firebase.get('/Habook',"HiL")
+HiT = firebase.get('/Habook',"HiT")
 
 app = Flask(__name__)
 
@@ -43,11 +46,9 @@ def contect():
     return render_template('contect.html')
 
 
-@app.route("/sendInfo", methods = ['POST'])
+@app.route("/sendInfo", methods = ['POST', 'GET'])
 def sendInfo():
-    Hab = firebase.get('/Habook',"Hab")
-    HiL = firebase.get('/Habook',"HiL")
-    HiT = firebase.get('/Habook',"HiT")
+
     result = request.form['mail']
     smtp_server = 'smtp.gmail.com'
     msg = MIMEMultipart()
