@@ -11,6 +11,19 @@ HiT = firebase.get('/Habook',"HiT")
 
 app = Flask(__name__)
 
+mail_settings = {
+    "DEBUG" : True,
+    "MAIL_SERVER" : 'smtp.gmail.com',
+    "MAIL_PORT" : 587,
+    "MAIL_USE_TLS" : True,
+    "MAIL_USE_SSL" : False,
+    "MAIL_USERNAME" : HiL,
+    "MAIL_PASSWORD" : HiT
+}
+
+app.config.update(mail_settings)
+mail = Mail(app)
+
 @app.route("/")
 def home():
     return render_template('index.html')
@@ -48,23 +61,12 @@ def contect():
 
 @app.route("/sendInfo", methods = ['POST', 'GET'])
 def sendInfo():
-
     result = request.form['mail']
-    msg = MIMEMultipart()
-    #信件內文
-    mailContent= 'Hi 以下是對方填入的資訊,' + '\n' + result
-    content = MIMEText(mailContent)
-    msg.attach(content)
-    #信件Title
-    msg['Subject'] = 'Coin Page' 
-    msg['From'] = HiL + '@gamil.com'
-    msg['To'] = HiL + '@gamil.com'
-    server = smtplib.SMTP('smtp.gmail.com', '587')
-    server.ehlo()
-    server.starttls()
-    server.ehlo()
-    server.sendmail(Hab, Hab, msg.as_string())
-    server.quit()
+    msg = Message(subject="Coin Page",
+                sender=app.config.get("MAIL_USERNAME"),
+                recipients=[Hab],
+                body= "以下是對方填入的資訊" + result)
+    mail.send(msg)
     return render_template('contect.html')
 
 if __name__ == '__main__':
