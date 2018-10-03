@@ -63,7 +63,7 @@ def sendInfo():
     server.ehlo()
     server.starttls()
     server.ehlo()
-#     server.login(HiL, HiT)
+    server.login(HiL, HiT)
 #     server.sendmail(Hab, Hab, msg.as_string())
 #     server.quit()
     return render_template('contect.html')
