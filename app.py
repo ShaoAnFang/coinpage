@@ -18,7 +18,7 @@ mail_settings = {
     "MAIL_PORT" : 587,
     "MAIL_USE_TLS" : True,
     "MAIL_USE_SSL" : False,
-    "MAIL_USERNAME" : HiL,
+    "MAIL_USERNAME" : HiL + '@gmail.com',
     "MAIL_PASSWORD" : HiT
 }
 
