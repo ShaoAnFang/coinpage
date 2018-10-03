@@ -60,9 +60,9 @@ def sendInfo():
     msg['From'] = HiL + '@gamil.com'
     msg['To'] = HiL + '@gamil.com'
     server = smtplib.SMTP('smtp.gmail.com', '587')
-#     server.ehlo()
-#     server.starttls()
-#     server.ehlo()
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
 #     server.login(HiL, HiT)
 #     server.sendmail(Hab, Hab, msg.as_string())
 #     server.quit()
