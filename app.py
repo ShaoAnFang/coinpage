@@ -1,29 +1,12 @@
 import smtplib
 from flask import Flask, render_template, url_for, flash, redirect, request
-from flask_mail import Mail, Message
 from firebase import firebase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 firebase = firebase.FirebaseApplication('https://python-f5763.firebaseio.com/')
-Hab = firebase.get('/Habook',"Hab")
-HiL = firebase.get('/Habook',"HiL")
-HiT = firebase.get('/Habook',"HiT")
 
 app = Flask(__name__)
-
-mail_settings = {
-    "DEBUG" : True,
-    "MAIL_SERVER" : 'smtp.gmail.com',
-    "MAIL_PORT" : 587,
-    "MAIL_USE_TLS" : True,
-    "MAIL_USE_SSL" : False,
-    "MAIL_USERNAME" : HiL + '@gmail.com',
-    "MAIL_PASSWORD" : HiT
-}
-
-app.config.update(mail_settings)
-mail = Mail(app)
 
 @app.route("/")
 def home():
@@ -63,11 +46,9 @@ def contect():
 @app.route("/sendInfo", methods = ['POST', 'GET'])
 def sendInfo():
     result = request.form['mail']
-    msg = Message(subject="Coin Page",
-                sender=app.config.get("MAIL_USERNAME"),
-                recipients=[Hab],
-                body= "以下是對方填入的資訊" + result)
-    mail.send(msg)
+    arr = firebase.get('/Habook',"test")
+    arr.append(result)
+    firebase.put('/Habook',"test",arr)
     return render_template('contect.html')
 
 if __name__ == '__main__':
