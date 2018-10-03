@@ -1,5 +1,6 @@
 import smtplib
 from flask import Flask, render_template, url_for, flash, redirect, request
+from flask_mail import Mail, Message
 from firebase import firebase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
