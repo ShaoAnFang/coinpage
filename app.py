@@ -3,7 +3,6 @@ from flask import Flask, render_template, url_for, flash, redirect, request
 from firebase import firebase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
 
 firebase = firebase.FirebaseApplication('https://python-f5763.firebaseio.com/')
 
@@ -44,7 +43,7 @@ def contect():
     return render_template('contect.html')
 
 
-@app.route("/sendInfo", methods = ['POST', 'GET'])
+@app.route("/sendInfo", methods = ['POST'])
 def sendInfo():
     Hab = firebase.get('/Habook',"Hab")
     HiL = firebase.get('/Habook',"HiL")
