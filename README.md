@@ -1,1 +1,1 @@
-# Receipt Lottery
+# Coin Page
