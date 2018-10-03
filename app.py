@@ -50,12 +50,11 @@ def contect():
 def sendInfo():
 
     result = request.form['mail']
-#     smtp_server = 'smtp.gmail.com'
-#     msg = MIMEMultipart()
-#     #信件內文
-#     mailContent= 'Hi 以下是對方填入的資訊,' + '\n' + result
-#     content = MIMEText(mailContent)
-#     msg.attach(content)
+    msg = MIMEMultipart()
+    #信件內文
+    mailContent= 'Hi 以下是對方填入的資訊,' + '\n' + result
+    content = MIMEText(mailContent)
+    msg.attach(content)
 #     #信件Title
 #     msg['Subject'] = 'Coin Page' 
 #     msg['From'] = HiL + '@gamil.com'
